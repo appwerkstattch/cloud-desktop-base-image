@@ -7,7 +7,25 @@
   unarchive: src=/tigervnc.tar.gz dest=/ copy=no
 
 - name: Clone noVNC
-  git: repo={{ vnc_novnc_git }} dest=/usr/local/lib
+  git: repo={{ vnc_novnc_git }} dest=/usr/local/lib/noVNC accept_hostkey=yes
+
+- name: Install numpy
+  apt: name=python-numpy
 
 - name: sym link for novnc launch.sh
   file: src=/usr/local/lib/noVNC/utils/launch.sh dest=/usr/local/bin/novnc.sh state=link
+
+- name: create vnc user
+  user: name={{ vnc_user }} password={{ vnc_user_password }}
+
+- name: create .vnc folder for vnc_user
+  file: path=/home/{{ vnc_user }}/.vnc/ state=directory owner={{ vnc_user }} group={{ vnc_user }}  mode=0755
+
+- name: create vnc passwd
+  file: path=/home/{{ vnc_user }}/.vnc/passwd owner={{ vnc_user }} group={{ vnc_user }} state=touch  mode=0600
+
+- name: write vnc server password into vnc passwd
+  shell: echo "{{ vnc_server_password }}" | vncpasswd -f > /home/{{ vnc_user }}/.vnc/passwd
+
+- name: copy xstartup
+  copy: src=xstartup dest=/home/{{ vnc_user }}/.vnc/xstartup owner={{ vnc_user }} group={{ vnc_user }} mode=0755

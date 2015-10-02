@@ -1,0 +1,10 @@
+---
+- hosts: vm
+  sudo: yes
+  pre_tasks:
+    - name: update and upgrade
+      apt: update_cache=yes cache_valid_time=3600 upgrade=safe
+
+  roles:
+    - setup-tools
+    - mate-desktop

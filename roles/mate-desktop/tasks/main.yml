@@ -1,0 +1,13 @@
+---
+# tasks file for mate-desktop
+- name: add ppa repositories
+  apt_repository: repo={{ item }}
+  with_items:
+    - ppa:ubuntu-mate-dev/ppa
+    - ppa:ubuntu-mate-dev/trusty-mate
+
+- name: install mate desktop
+  apt: name={{ item }} update_cache=yes cache_valid_time=3600
+  with_items:
+    - ubuntu-mate-core
+    - ubuntu-mate-desktop

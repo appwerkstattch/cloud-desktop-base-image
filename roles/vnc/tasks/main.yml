@@ -29,3 +29,12 @@
 
 - name: copy xstartup
   copy: src=xstartup dest=/home/{{ vnc_user }}/.vnc/xstartup owner={{ vnc_user }} group={{ vnc_user }} mode=0755
+
+- name: copy novnc upstart script
+  template: src=novnc.j2.conf dest=/etc/init/novnc.conf
+
+- name: copy vncserver upstart script
+  template: src=vncserver.j2.conf dest=/etc/init/vncserver.conf
+
+- name: reload upstart configuration
+  shell: initctl reload-configuration

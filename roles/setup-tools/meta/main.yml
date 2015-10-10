@@ -1,0 +1,11 @@
+---
+galaxy_info:
+  author: Heinrich Spreiter
+  description: Installs tools that are needed for the creation of the image.
+  license: Apache
+  min_ansible_version: 1.2
+  platforms:
+  - name: Ubuntu
+    versions:
+    - trusty
+dependencies: []

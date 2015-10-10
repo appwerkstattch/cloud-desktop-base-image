@@ -1,5 +1,5 @@
-Role Name
-=========
+vnc
+===
 
 Setup VNC and noVNC
 
@@ -10,11 +10,12 @@ None.
 
 Role Variables
 --------------
+See vars/main.yml
 
 Dependencies
 ------------
 
-setup-tools
+See meta/main.yml
 
 License
 -------

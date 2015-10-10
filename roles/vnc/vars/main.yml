@@ -1,5 +1,5 @@
 ---
-# defaults file for vnc
+# vars file for vnc
 vnc_user: developer
 # user password must be hashed
 # generated with

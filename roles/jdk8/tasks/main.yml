@@ -1,2 +1,8 @@
 ---
 # tasks file for jdk8
+- name: add ppa:openjdk-r/ppa
+  apt_repository: repo=ppa:openjdk-r/ppa
+
+- name: install openjdk8
+  apt: name=openjdk-8-jdk update_cache=yes cache_valid_time=3600
+

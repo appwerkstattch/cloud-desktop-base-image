@@ -1,5 +1,5 @@
-Role Name
-=========
+setup-tools
+===========
 
 Installs tools that are needed for the creation of the image.
 

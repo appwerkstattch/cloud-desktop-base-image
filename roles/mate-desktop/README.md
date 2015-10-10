@@ -1,5 +1,5 @@
-Role Name
-=========
+mate-desktop
+============
 
 Installs the MATE Desktop Environment
 

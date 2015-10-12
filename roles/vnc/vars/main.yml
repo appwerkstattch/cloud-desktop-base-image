@@ -1,10 +1,5 @@
 ---
 # vars file for vnc
-vnc_user: developer
-# user password must be hashed
-# generated with
-# openssl passwd -salt salty -1 developer
-vnc_user_password: $1$salty$.VA0b7SfedFBoiEajyeIP0
 vnc_server_password: developer
 vnc_listen: 80
 vnc_port: 5901

@@ -1,0 +1,6 @@
+---
+default_user_name: developer
+# user password must be hashed
+# generated with
+# openssl passwd -salt salty -1 developer
+default_user_password: $1$salty$.VA0b7SfedFBoiEajyeIP0

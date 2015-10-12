@@ -10,5 +10,5 @@ galaxy_info:
     - trusty
 dependencies:
 - setup-tools
+- setup-default-user
 - mate-desktop
-  

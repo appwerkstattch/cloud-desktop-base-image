@@ -1,0 +1,4 @@
+---
+# tasks file for setup-default-user
+- name: create default user
+  user: name={{ default_user_name }} password={{ default_user_password }}

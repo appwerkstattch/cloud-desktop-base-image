@@ -1,0 +1,7 @@
+---
+# tasks file for eclipse
+- name: download eclipse mars
+  get_url: url=http://mirror.onet.pl/pub/mirrors/eclipse//technology/epp/downloads/release/mars/R/eclipse-jee-mars-R-linux-gtk-x86_64.tar.gz dest=/home/{{ default_user_name }}/eclipse-jee-mars-R-linux-gtk-x86_64.tar.gz
+
+- name: extract eclipse
+  unarchive: src=/home/developer/eclipse-jee-mars-R-linux-gtk-x86_64.tar.gz dest=/home/{{ default_user_name }} owner={{ default_user_name }} group={{ default_user_name }} copy=no

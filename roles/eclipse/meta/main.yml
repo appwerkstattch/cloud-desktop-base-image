@@ -9,4 +9,5 @@ galaxy_info:
     versions:
     - trusty
 dependencies:
+- setup-default-user
 - jdk8

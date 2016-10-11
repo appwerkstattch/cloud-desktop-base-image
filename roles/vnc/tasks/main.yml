@@ -1,7 +1,7 @@
 ---
 # tasks file for vnc
 - name: Download TigerVNC
-  get_url: url={{ vnc_tiger_url }} dest=/tigervnc.tar.gz
+  get_url: url={{ vnc_tiger_url }} dest=/tigervnc.tar.gz validate_certs=no
 
 - name: Extract TigerVNC
   unarchive: src=/tigervnc.tar.gz dest=/ copy=no
